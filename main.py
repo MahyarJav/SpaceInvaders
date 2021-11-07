@@ -4,29 +4,29 @@ import random
 def main():
     # Game Title and Icon
     pg.display.set_caption('Space Invaders')
-    GameIcon = pg.image.load(r'SpaceInvaders\Images\space-invaders.png')
+    GameIcon = pg.image.load('Images\space-invaders.png')
     pg.display.set_icon(GameIcon)
     # Player load
-    playerImg = pg.image.load(r'SpaceInvaders\Images\player.png')
+    playerImg = pg.image.load('Images\player.png')
     playerX = 580
     playerY = 640
     playerX_move = 0
 
     # Enemy load
     # Enemy 1
-    enemyOneImg = pg.image.load(r'SpaceInvaders\Images\enemy1.png')
+    enemyOneImg = pg.image.load('Images\enemy1.png')
     e1X = random.randint(20, 1215)
     e1Y = random.randint(50, 280)
     e1X_change = 0
     e1Y_change = 0
     # Enemy 2
-    enemyTwoImg = pg.image.load(r'SpaceInvaders\Images\enemy2.png')
+    enemyTwoImg = pg.image.load('Images\enemy2.png')
     e2X = random.randint(120, 1215)
     e2Y = random.randint(50, 280)
     e2X_change = 0
     e2Y_change = 0
     # Enemy 3
-    enemyThreeImg = pg.image.load(r'SpaceInvaders\Images\enemy3.png')
+    enemyThreeImg = pg.image.load('Images\enemy3.png')
     e3X = random.randint(220, 1215)
     e3Y = random.randint(50, 280)
     e3X_change = 0
