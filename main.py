@@ -40,14 +40,17 @@ def main():
     boundariesX_max = 1215
     bxMin = boundariesX_min
     bxMax = boundariesX_max
+    boundariesY_min = 0
+    # unused
+    # byMin = boundariesY_min
 
     # Bullet load
     bulletImg = pg.image.load("Images/bullet.png")
     # unused
     # bulletX = 1
     bulletY = 640
-    bulletY_change = 100
-    # not used yet
+    bulletY_change = 10
+    # unused
     # bulletX_change = 1
     bullet_state = 12
 
@@ -67,8 +70,6 @@ def main():
     def fire_bullet(x, y):
         global bullet_state
         bullet_state = True
-        if bullet_state is True:
-            bullet_state = False
         screen.blit(bulletImg, (x, y))
         print(bullet_state)
     # Creates game screen - half values - 640 x 360
@@ -101,26 +102,22 @@ def main():
                 if (event.key == pg.K_a or event.key == pg.K_RIGHT or
                         event.key == pg.K_d or event.key == pg.K_LEFT):
                     playerX_move = 0
-        # Boundaries to ensure player & Enemies doersn't go off screen.
+        # Boundaries to ensure player & Enemies don't go off screen.
         if playerX <= bxMin:
             playerX = bxMin
         elif playerX >= bxMax:
             playerX = bxMax
         # Enemy movement
-
         # Enemy 1
         E1x += E1x_change
-
         if E1x <= bxMin:
             E1x_change = 0.5
             E1y += E1y_change
         elif E1x >= bxMax:
             E1x_change = -0.5
             E1y += E1y_change
-
         # Enemy 2
         E2x += E2x_change
-
         if E2x <= bxMin:
             E2x_change = 0.5
             E2y += E2y_change
@@ -129,14 +126,13 @@ def main():
             E2y += E2y_change
         # Enemy 3
         E3x += E3x_change
-
         if E3x <= bxMin:
             E3x_change = 0.5
             E3y += E3y_change
         elif E3x >= bxMax:
             E3x_change = -0.5
             E3y += E3y_change
-
+        # Bullet firing, but wont fire.
         if bullet_state is True:
             fire_bullet(playerX, bulletY)
             bulletY -= bulletY_change
