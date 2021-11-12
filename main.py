@@ -52,7 +52,7 @@ def main():
     bulletY_change = 10
     # unused
     # bulletX_change = 1
-    bullet_state = 12
+    bullet_state = False
 
     # Loads in images (Player, Bullets and Enemies)
     def player(x, y):
